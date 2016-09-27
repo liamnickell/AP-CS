@@ -1,2 +1,2 @@
-# AP Computer Science Exercises
-Random Java exercises for my 2016-2017 AP Computer Science class. Note: only ungraded in-class exercises are posted. Many of the exercises will do more than what their main intention was.
+# AP Computer Science Class
+Random Java exercises and assignments for my 2016-2017 AP Computer Science class. Many of the exercises will do more than what their main intention was. Note: any graded assignments are not posted until after the due date has passed and a grade has been posted for my submission.
