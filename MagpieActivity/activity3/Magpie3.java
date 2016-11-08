@@ -22,6 +22,10 @@ public class Magpie3
 		return "Hello, let's talk.";
 	}
 
+	public static void main(String[] args) {
+		findKeyword("She's my sister", "sister", 0);
+	}
+
 	/**
 	 * Gives a response to a user statement
 	 * 
@@ -47,30 +51,30 @@ public class Magpie3
 		{
 			response = "Tell me more about your family.";
 		} 
-		else if (findKeyword(statement, "dog") >= 0
-				|| findKeyword(statement, "cat") >= 0) 
-		{
-			response = "Tell me more about your pets.";
-		} 
-		else if (findKeyword(statement, "goudy")) 
-		{
-			response = "She is a very good teacher.";
-		} 
-		else if (findKeyword(statement, "esd") >= 0) 
-		{
-			response = "Please don't use me to cheat on membean. #HRI";
-		} 
-		else if (findKeyword(statement, "car") >= 0) 
-		{
-			response = "You sound like one of those ricers."
-			           + " You know, one of those kids that" 
-			           + " lower their cars and put flame decals"
-			           + " on the side to \"make it go faster?\"";
-		} 
-		else if (findKeyword(statement, "food") >= 0) 
-		{
-			response = "You're making me hungry.";
-		}
+		// else if (findKeyword(statement, "dog") >= 0
+		// 		|| findKeyword(statement, "cat") >= 0) 
+		// {
+		// 	response = "Tell me more about your pets.";
+		// } 
+		// else if (findKeyword(statement, "goudy")) 
+		// {
+		// 	response = "She is a very good teacher.";
+		// } 
+		// else if (findKeyword(statement, "esd") >= 0) 
+		// {
+		// 	response = "Please don't use me to cheat on membean. #HRI";
+		// } 
+		// else if (findKeyword(statement, "car") >= 0) 
+		// {
+		// 	response = "You sound like one of those ricers."
+		// 	           + " You know, one of those kids that" 
+		// 	           + " lower their cars and put flame decals"
+		// 	           + " on the side to \"make it go faster?\"";
+		// } 
+		// else if (findKeyword(statement, "food") >= 0) 
+		// {
+		// 	response = "You're making me hungry.";
+		// }
 		else
 		{
 			response = getRandomResponse();
@@ -94,8 +98,8 @@ public class Magpie3
 	 * @return the index of the first occurrence of goal in
 	 *         statement or -1 if it's not found
 	 */
-	private int findKeyword(String statement, String goal,
-			int startPos)
+	private static int findKeyword(String statement, String goal,
+					int startPos)
 	{
 		// Trim input statement (remove leading+trailing whitespace)
 		String phrase = statement.trim();
@@ -123,6 +127,8 @@ public class Magpie3
 				// statement (as lowercase)
 				before = phrase.substring(psn - 1, psn)
 						.toLowerCase();
+
+				System.out.println("before: " + before);
 			}
 			// If position plus length of goal input is less than
 			// length of phrase
@@ -134,6 +140,8 @@ public class Magpie3
 						psn + goal.length(),
 						psn + goal.length() + 1)
 						.toLowerCase();
+
+				System.out.println("after: " + after);
 			}
 
 			// If before and after aren't letters, we've
@@ -144,6 +152,8 @@ public class Magpie3
 					&& ((after.compareTo("a") < 0) || (after
 							.compareTo("z") > 0)))
 			{
+				System.out.println("return psn: " + psn);
+
 				// Returns a number for psn instead of -1
 				return psn;
 			}
@@ -153,6 +163,7 @@ public class Magpie3
 			psn = phrase.indexOf(goal.toLowerCase(),
 					psn + 1);
 
+			System.out.println("next psn: " + psn);
 		}
 
 		// Goal not found
@@ -173,7 +184,7 @@ public class Magpie3
 	 * @return the index of the first occurrence of goal in
 	 *         statement or -1 if it's not found
 	 */
-	private int findKeyword(String statement, String goal)
+	private static int findKeyword(String statement, String goal)
 	{
 		return findKeyword(statement, goal, 0);
 	}

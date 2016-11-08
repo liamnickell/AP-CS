@@ -3,8 +3,10 @@ import java.util.Scanner;
 /**
  * A simple class to run the Magpie class.
  * @author Laurie White
- * @version April 2012
+ * @author Liam Nickell
+ * @version 9/27/2016
  */
+
 public class MagpieRunner4
 {
 
@@ -19,7 +21,7 @@ public class MagpieRunner4
 		Scanner in = new Scanner (System.in);
 		String statement = in.nextLine();
 		
-		while (!statement.equals("Bye"))
+		while (!statement.toLowerCase().equals("bye"))
 		{
 			System.out.println (maggie.getResponse(statement));
 			statement = in.nextLine();

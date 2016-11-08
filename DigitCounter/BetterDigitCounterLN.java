@@ -8,6 +8,7 @@
 * @author     Liam Nickell
 * @version    1.0.0
 */
+
 import java.util.*;
 
 public class BetterDigitCounterLN {
