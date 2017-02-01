@@ -1,13 +1,28 @@
-public class CardLN {
+public class CardLN implements Comparable {
 
     private int value;
     private SuitLN suit;
 
     public int getValue() { return value; }
-    public SuitLN getSuit() { return getSuit; }
+    public SuitLN getSuit() { return suit; }
 
-    public void setValue(int value) { this.value = value; }
-    public void setSuit(SuitLN suit) { (value < 14 && value > 0) ? value : 1; }
+    public void setValue(int value) { this.value = (value < 14 && value > 0) ? value : 1;; }
+    public void setSuit(SuitLN suit) { this.suit = suit; }
+
+    public CardLN() {
+        this.value = (int) (Math.random() * 13) + 1;
+        
+        int randomSuit = (int) (Math.random() * 4) + 1;
+        if(randomSuit == SuitLN.SPADES.getRanking()) {
+            this.suit = SuitLN.SPADES;
+        } else if(randomSuit == SuitLN.HEARTS.getRanking()) {
+            this.suit = SuitLN.HEARTS;
+        } else if(randomSuit == SuitLN.DIAMONDS.getRanking()) {
+            this.suit = SuitLN.DIAMONDS;
+        } else {
+            this.suit = SuitLN.CLUBS;
+        }
+    }
 
     public CardLN(int value, SuitLN suit) {
         this.value = (value < 14 && value > 0) ? value : 1;
@@ -16,6 +31,18 @@ public class CardLN {
 
     public String toString() {
         return value + " of " + suit.getName();
+    }
+
+    public int compareTo(Object obj) {
+        CardLN card = (CardLN) obj;
+
+        if(this.value == card.getValue() && this.suit == card.getSuit()) {
+            return 0;
+        } else if(this.value == card.getValue()) {
+            return this.suit.getRanking() - card.getSuit().getRanking();
+        } else {
+            return this.value - card.getValue();
+        }
     }
     
 }
