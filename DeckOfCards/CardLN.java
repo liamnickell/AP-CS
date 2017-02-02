@@ -37,11 +37,14 @@ public class CardLN implements Comparable {
         CardLN card = (CardLN) obj;
 
         if(this.value == card.getValue() && this.suit == card.getSuit()) {
+            // not possible in 52 card deck, but still good to check 
+            // (in case someone decides to make a deck with more than 52 cards)
             return 0;
         } else if(this.value == card.getValue()) {
             return this.suit.getRanking() - card.getSuit().getRanking();
         } else {
-            return this.value - card.getValue();
+            // switched due to greater values meaning greater ranking (unlike suit)
+            return card.getValue() - this.value;
         }
     }
     
