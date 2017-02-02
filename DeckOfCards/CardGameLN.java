@@ -104,7 +104,8 @@ public class CardGameLN {
         for(int current=0; current<player1Hand.length; current++) {
             for(int i=0; i<player1Hand.length; i++) {
                 // doesn't equal zero checks for if it is the same card being compared
-                if(player1Hand[current].compareTo(player1Hand[i]) != 0 && player1Hand[current].getValue() == player1Hand[i].getValue()) {
+                if(player1Hand[current].compareTo(player1Hand[i]) != 0 
+                    && player1Hand[current].getValue() == player1Hand[i].getValue()) {
                     player1PairValue = player1Hand[current].getValue();
                 }
             }
@@ -117,7 +118,8 @@ public class CardGameLN {
         for(int current=0; current<player2Hand.length; current++) {
             for(int i=0; i<player2Hand.length; i++) {
                 // doesn't equal zero checks for if it is the same card being compared
-                if(player2Hand[current].compareTo(player2Hand[i]) != 0 && player2Hand[current].getValue() == player2Hand[i].getValue()) {
+                if(player2Hand[current].compareTo(player2Hand[i]) != 0 
+                    && player2Hand[current].getValue() == player2Hand[i].getValue()) {
                     player2PairValue = player2Hand[current].getValue();
                 }
             }
