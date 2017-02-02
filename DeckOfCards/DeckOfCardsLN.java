@@ -1,3 +1,13 @@
+/**
+* Program Name:        DeckOfCardsLN.java
+* Program Purpose:     DeckOfCards object blueprint class.
+* Date Created:        1/25/2017
+* Last Modified:       2/1/2017
+*
+* @author     Liam Nickell
+* @version    1.0.0
+*/
+
 public class DeckOfCardsLN {
 
     private CardLN[] deck;
@@ -5,6 +15,11 @@ public class DeckOfCardsLN {
 
     public int getCardsDrawn() { return cardsDrawn; }
 
+    /**
+    * Method Purpose: Constructor for class that sets all variables 
+    * to default values in order, then shuffles 3 times (gotta make 
+    * sure it's shuffled enough ;P). 
+    */
     public DeckOfCardsLN() {
         cardsDrawn = 0;
         deck = new CardLN[52];
@@ -26,9 +41,12 @@ public class DeckOfCardsLN {
 
         shuffle();
         shuffle();
-        shuffle(); // third time's the charm
+        shuffle(); // third time's the charm :)
     }
 
+    /**
+    * Method Purpose: Shuffles [randomizes the order of] the deck array.
+    */
     public void shuffle() {
         CardLN store;
         int randNum;
@@ -42,6 +60,12 @@ public class DeckOfCardsLN {
         }
     }
 
+    /**
+    * Method Purpose: Picks a card from deck array (next in line) and
+    * returns it (as CardLN object).
+    *
+    * @return CardLN object that is picked from deck array.
+    */
     public CardLN deal() {
         if(cardsDrawn <= 52) {
             CardLN card = deck[cardsDrawn];

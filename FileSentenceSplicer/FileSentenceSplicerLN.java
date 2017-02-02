@@ -7,7 +7,6 @@ public class FileSentenceSplicerLN {
 
     public static void main(String args[]) {
         try {
-            Path path = new Paths.get("output.txt");
             File file = new File("input.txt");
             Scanner fileInfo = new Scanner(file);
 
