@@ -1,3 +1,13 @@
+/**
+* Program Name:        ArraysIn2DFunLN.java
+* Program Purpose:     Prints an array of numbers 1-100 in various ways.
+* Date Created:        1/28/2017
+* Last Modified:       2/5/2017
+*
+* @author     Liam Nickell
+* @version    1.0.0
+*/
+
 public class ArraysIn2DFunLN {
 
     public static void main(String[] args) {
